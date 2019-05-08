@@ -6,6 +6,10 @@ TagManager:
   tags:
   - DieZone
   - BridgeCollider
+  - EnemyAggroArea
+  - Hero
+  - HeroAttack
+  - EnemyHitbox
   layers:
   - Default
   - TransparentFX
@@ -15,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Platform
   - 
   - 
   - 

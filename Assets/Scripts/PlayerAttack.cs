@@ -7,11 +7,13 @@ public class PlayerAttack : MonoBehaviour
     private bool Attacking = false;
 
     private float AttackTimer = 0;
-    private float AttackCd = 0.6f;
+    private float AttackCd = 0.33f;
 
     public Collider2D AttackTrigger;
 
     private Animator anim;
+
+    private bool IsJumping = false;
 
     void Awake()
     {
@@ -21,7 +23,8 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("f") && !Attacking)
+        IsJumping = anim.GetBool("IsJumping");
+        if (Input.GetKeyDown("f") && !Attacking && !IsJumping)
         {
             Attacking = true;
             AttackTimer = AttackCd;
