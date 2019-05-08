@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class EnemyHitbox : MonoBehaviour
 {
-
-    public GameObject skeleton;
+    public GameObject test;
+    //public SkeletonController skeleton;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag.Equals("HeroAttack"))
         {
-            Destroy(skeleton);
+            test.SendMessage("Damage", 25f);
+            //skeleton.Damage(25f);
         }
     }
 }

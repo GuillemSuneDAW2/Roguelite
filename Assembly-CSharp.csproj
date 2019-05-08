@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\SkeletonController.cs" />
     <Reference Include="Cinemachine">
       <HintPath>D:/Unity/UnityProjects/M08 Projecte/Roguelite/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>

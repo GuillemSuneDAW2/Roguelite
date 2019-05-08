@@ -6,6 +6,8 @@ using System.Collections;
 [RequireComponent (typeof(Seeker))]
 public class EnemyAI : MonoBehaviour
 {
+    private bool hasDied = false;
+
     // Control the animations
     private Animator animator;
 
@@ -87,10 +89,12 @@ public class EnemyAI : MonoBehaviour
     {
         animator.SetFloat("Speed", Mathf.Abs(speed));
 
-        if (transform.position.x < target.position.x && !FacingRight)
+        hasDied = animator.GetBool("IsDying");
+
+        if (transform.position.x < target.position.x && !FacingRight && !hasDied)
             Flip();
         
-        if (transform.position.x > target.position.x && FacingRight)
+        if (transform.position.x > target.position.x && FacingRight && !hasDied)
             Flip();
     }
 
