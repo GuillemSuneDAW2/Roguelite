@@ -18,6 +18,8 @@ public class SkeletonController : MonoBehaviour
     {
         if (health <= 0)
         {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = 0f;
             rb.bodyType = RigidbodyType2D.Kinematic;
             Destroy(foot);
             animator.SetBool("IsDying", true);
