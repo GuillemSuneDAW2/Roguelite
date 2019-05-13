@@ -377,7 +377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e988ae68a91b54e9e012f5009896b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: {fileID: 2108020789}
+  skeleton: {fileID: 2108020789}
+  player: {fileID: 512756281}
 --- !u!1 &258733534
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,6 +393,7 @@ GameObject:
   - component: {fileID: 258733541}
   - component: {fileID: 258733537}
   - component: {fileID: 258733540}
+  - component: {fileID: 258733538}
   m_Layer: 0
   m_Name: LilRagnaros
   m_TagString: Untagged
@@ -466,6 +468,24 @@ PolygonCollider2D:
       - {x: -0.16825613, y: -0.8889278}
       - {x: 0.52119446, y: -0.8889278}
       - {x: 0.5981166, y: 0.042648}
+--- !u!114 &258733538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258733534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f6fa79e4767e2140b3798c33a9b30f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  damage: 25
+  healthBar: {fileID: 0}
+  gm: {fileID: 0}
+  animator: {fileID: 0}
+  particlesHit: {fileID: 0}
 --- !u!95 &258733539
 Animator:
   serializedVersion: 3
@@ -4354,6 +4374,7 @@ GameObject:
   - component: {fileID: 512756289}
   - component: {fileID: 512756288}
   - component: {fileID: 512756290}
+  - component: {fileID: 512756291}
   m_Layer: 0
   m_Name: Player
   m_TagString: Hero
@@ -4489,7 +4510,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: PlayerController+BoolEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  gameController: {fileID: 1030674551}
 --- !u!50 &512756286
 Rigidbody2D:
   serializedVersion: 4
@@ -4581,6 +4601,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackTrigger: {fileID: 1945892978}
+--- !u!114 &512756291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512756281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f6fa79e4767e2140b3798c33a9b30f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  damage: 25
+  healthBar: {fileID: 1499423007}
+  gm: {fileID: 1030674551}
+  animator: {fileID: 512756283}
+  particlesHit: {fileID: 5014220631726586665, guid: 9469de927bcc47942850191d2aa08fae,
+    type: 3}
 --- !u!1 &514674913
 GameObject:
   m_ObjectHideFlags: 0
@@ -10066,6 +10105,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1555622705}
+  - {fileID: 1499423008}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -39134,7 +39174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1499423007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39155,14 +39195,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499423006}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.07, y: 5.97, z: -3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -4.62, y: 2.38, z: 9}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 1322882917}
   - {fileID: 1110747911}
   - {fileID: 42365498}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1506278722
 GameObject:

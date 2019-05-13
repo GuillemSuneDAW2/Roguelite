@@ -30,8 +30,6 @@ public class PlayerController : MonoBehaviour
     public BoolEvent OnCrouchEvent;
     private bool m_wasCrouching = false;
 
-    public GameObject gameController;
-
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -145,18 +143,5 @@ public class PlayerController : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "DieZone")
-        {
-            Destroy(this.gameObject);
-            GameController.RestartGame();
-        }
-        else if (collision.tag == "BridgeCollider")
-        {
-            gameController.SendMessage("DestroyBridge");
-        }
     }
 }

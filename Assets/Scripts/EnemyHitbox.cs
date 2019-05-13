@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class EnemyHitbox : MonoBehaviour
 {
-    public GameObject test;
-    //public SkeletonController skeleton;
+    public GameObject skeleton;
+    public GameObject player;
+
+    private float damage;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag.Equals("HeroAttack"))
         {
-            test.SendMessage("Damage", 25f);
-            //skeleton.Damage(25f);
+            damage = player.GetComponent<PlayerObject>().damage;
+
+            skeleton.SendMessage("Damage", damage);
         }
     }
 }

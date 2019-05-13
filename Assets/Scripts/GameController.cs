@@ -9,28 +9,9 @@ public class GameController : MonoBehaviour
     public GameState gameState = GameState.Idle;
 
     public GameObject player;
-
+    
     public GameObject bridge;
     public GameObject brokenBridge;
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (gameState == GameState.Idle)
-        {
-
-        }
-    }
-
-    public static void RestartGame()
-    {
-        SceneManager.LoadScene("SampleScene");
-    }
 
     public void DestroyBridge()
     {

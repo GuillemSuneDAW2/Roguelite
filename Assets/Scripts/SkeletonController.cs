@@ -7,8 +7,6 @@ public class SkeletonController : MonoBehaviour
 
     private float health = 100;
 
-    private float dyingTimer = 1.02f;
-
     public CircleCollider2D foot;
 
     public Animator animator;
@@ -32,6 +30,15 @@ public class SkeletonController : MonoBehaviour
         {
             health -= damage;
             Debug.Log("Skeleton current health: " + health);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        PlayerObject player = collision.collider.GetComponent<PlayerObject>();
+        if (player != null)
+        {
+            player.Damaged(15);
         }
     }
 }
