@@ -15,8 +15,6 @@ public class SkeletonController : MonoBehaviour
     public Animator animator;
     public Rigidbody2D rb;
 
-    public AudioSource audio;
-
     private bool sentExperience = false;
 
     private void Update()
@@ -54,7 +52,6 @@ public class SkeletonController : MonoBehaviour
         PlayerObject player = collision.collider.GetComponent<PlayerObject>();
         if (player != null)
         {
-            audio.Play();
             player.Damaged(15);
         }
     }

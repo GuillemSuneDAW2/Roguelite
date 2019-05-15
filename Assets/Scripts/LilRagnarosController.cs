@@ -12,9 +12,15 @@ public class LilRagnarosController : MonoBehaviour
 
     private Animator animator;
 
+    private AudioSource audio;
+    public AudioClip shotAudio;
+
+    public GameController gm;
+
     private void Start()
     {
         animator = gameObject.GetComponent<Animator>();
+        audio = gameObject.GetComponent<AudioSource>();
     }
 
     public void StartShooting()
@@ -32,6 +38,8 @@ public class LilRagnarosController : MonoBehaviour
         if (health <= 0)
         {
             animator.Play("LilRagDeath");
+            audio.Play();
+            gm.BossWasKilled();
             Destroy(gameObject, 1f);
         }
     }
@@ -40,6 +48,7 @@ public class LilRagnarosController : MonoBehaviour
     {
         if (health > 0)
         {
+            audio.PlayOneShot(shotAudio);
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         }
     }

@@ -22,6 +22,14 @@ public class PlayerObject : MonoBehaviour
     public Transform particlesHit;
     public Transform particlesLevelUp;
 
+    private AudioSource audio;
+    public AudioClip damagedAudio;
+
+    private void Start()
+    {
+        audio = gameObject.GetComponent<AudioSource>();
+    }
+
     public void Damaged(float damage)
     {
         if ((health <= 0) || ((health - damage) <= 0))
@@ -37,6 +45,7 @@ public class PlayerObject : MonoBehaviour
             healthBar.SetSize(health / 100);
             Instantiate(particlesHit, gameObject.transform.position, Quaternion.identity);
         }
+        audio.PlayOneShot(damagedAudio);
     }
 
     public void LoadScene()
