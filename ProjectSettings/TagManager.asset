@@ -10,6 +10,8 @@ TagManager:
   - Hero
   - HeroAttack
   - EnemyHitbox
+  - RagnarosHitbox
+  - BossTrigger
   layers:
   - Default
   - TransparentFX

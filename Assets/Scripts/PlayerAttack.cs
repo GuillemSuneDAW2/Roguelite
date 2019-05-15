@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public AudioSource swingSound;
+
     private bool Attacking = false;
 
     private float AttackTimer = 0;
@@ -30,6 +32,8 @@ public class PlayerAttack : MonoBehaviour
             AttackTimer = AttackCd;
 
             AttackTrigger.enabled = true;
+
+            swingSound.Play();
         }
 
         if (Attacking)

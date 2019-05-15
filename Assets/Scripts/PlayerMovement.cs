@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && runSpeed > 0)
         {
             jump = true;
             animator.SetBool("IsJumping", true);

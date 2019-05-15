@@ -5,12 +5,19 @@ using UnityEngine;
 public class SkeletonController : MonoBehaviour
 {
 
+    public GameController gm;
+
     private float health = 100;
+    public int experienceContained = 70;
 
     public CircleCollider2D foot;
 
     public Animator animator;
     public Rigidbody2D rb;
+
+    public AudioSource audio;
+
+    private bool sentExperience = false;
 
     private void Update()
     {
@@ -21,7 +28,16 @@ public class SkeletonController : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Kinematic;
             Destroy(foot);
             animator.SetBool("IsDying", true);
+            if (!sentExperience)
+                SendExperience();
         }
+    }
+
+    private void SendExperience()
+    {
+        gm.ShareExperience(experienceContained);
+        sentExperience = true;
+        Debug.Log("Shared experience : " + experienceContained);
     }
 
     public void Damage(float damage)
@@ -38,6 +54,7 @@ public class SkeletonController : MonoBehaviour
         PlayerObject player = collision.collider.GetComponent<PlayerObject>();
         if (player != null)
         {
+            audio.Play();
             player.Damaged(15);
         }
     }
